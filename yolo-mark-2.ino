@@ -47,13 +47,6 @@ ButtonExecutor buttonExecutor(&Serial);
 void readEncoders(void);
 void readEdgeSensors(void);
 
-const char* param_names[] = {
-  "Device ID",
-  "PWM Parameter",
-  "Shut Down Motors on Error",
-  "Serial Timeout"
-};
-
 int motorState = 0;
 
 void setup() {
@@ -61,16 +54,6 @@ void setup() {
 
   qik.init();
 
-/*
-  for (int i = QIK_CONFIG_DEVICE_ID; i <= QIK_CONFIG_SERIAL_TIMEOUT; i++)
-  {
-    Serial.print(param_names[i]);
-    Serial.print(": ");
-    Serial.println(qik.getConfigurationParameter(i));
-  }
-*/
-  pinMode(2, INPUT);
-  
   buttonExecutor.setup(PUSH_BUTTON_PIN, LOW, sketchSetup, sketchStart, sketchStop);
 }
 
@@ -156,3 +139,4 @@ void controlMotors(void) {
       break;
   }
 }
+

@@ -27,7 +27,6 @@ const int EDGE_RF(17);
 const int EDGE_LR(30);
 const int EDGE_RR(36);
 
-
 // Motor encoders
 Encoder encoder_L(ENCODER_L_PIN_1, ENCODER_L_PIN_2);
 Encoder encoder_R(ENCODER_R_PIN_1, ENCODER_R_PIN_2);
@@ -71,6 +70,7 @@ void setup() {
   }
 */
   pinMode(2, INPUT);
+  
   buttonExecutor.setup(PUSH_BUTTON_PIN, LOW, sketchSetup, sketchStart, sketchStop);
 }
 
@@ -156,4 +156,3 @@ void controlMotors(void) {
       break;
   }
 }
-
